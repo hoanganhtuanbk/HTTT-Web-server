@@ -1,0 +1,82 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Quản lý dữ liệu xuất chuồng
+    <span class="pull-right btn-group">
+      <a href="" class="btn btn-xs btn-success" ui-sref="^.add()">
+        <i class="fa fa-plus"></i>
+      </a>
+    </span>
+  </div>
+
+  <div class='list-group'>
+    <table class="table table-bordered text-center" style="background-color: #ffffff">
+      <thead>
+      <tr>
+        <th>Mã chuồng nuôi</th>
+        <th>Mã nhân viên</th>
+        <th>Họ và tên </th>
+        <th>Tên công ty </th>
+        <th>Ngày xuất chuồng </th>
+        <th>Số lượng (con) </th>
+        <th>Tổng tiền</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="table-item" ng-repeat="item in ctrl.exportCotes | orderBy:'id':true ">
+        <td>
+          <span class="distance-to-icon">{{item.idFarm}}</span>
+        </td>
+        <td class="firstCell">
+          <div class="text-center">
+            <span class="distance-to-icon">{{item.idUser}}</span>
+          </div>
+        </td>
+        <td>
+          <div class="text-center" style="margin: 5px 0">
+            <span class="distance-to-icon">{{item.userName}}</span>
+          </div>
+        </td>
+        <td>
+          <div class="text-center">
+            <span class="distance-to-icon">{{item.companyName}}</span>
+          </div>
+        </td>
+        <td>
+        <div class="text-center">
+          <span class="distance-to-icon">{{item.dateExport}}</span>
+        </div>
+      </td>
+        <td>
+          <div class="text-center">
+            <span class="distance-to-icon">{{item.numberDan}}</span>
+          </div>
+        </td>
+        <td>
+          <div class="text-center">
+            <span class="distance-to-icon">{{item.price}}</span>
+          </div>
+        </td>
+        <td>
+       <span class="pull-right btn-group">
+      <a href="" class="btn btn-xs btn-default" ui-sref="^.edit({id: item.id})">
+        <i class="fa fa-pencil"></i>
+      </a>
+      <a href="" class="btn btn-xs btn-danger" ui-sref="^.delete({id: item.id})">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </span>
+        </td>
+      </tr>
+      </tbody>
+
+    </table>
+    <div ng-show="!ctrl.exportCotes.length" class="list-group-item">
+      <h4 class="list-group-item-heading" translate>
+        Chưa có dữ liệu xuất chuồng nào được nhập.
+      </h4>
+
+      <p class="list-group-item-text" translate>Click <a href="" ui-sref="^.add">vào đây</a> để thêm thông tin xuất chuồng</p>
+    </div>
+  </div>
+
+</div>

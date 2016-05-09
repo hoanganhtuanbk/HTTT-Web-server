@@ -1,0 +1,31 @@
+{
+  "name": "ExportCote",
+  "plural": "exportCotess",
+  "base": "PersistedModel",
+  "properties": {
+    "idFarm": {
+      "type": "string"
+    },
+    "iduser": {
+      "type": "string"
+    },
+    "dateExport": {
+      "type": "date"
+    },
+    "username": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "String"
+    },
+    "numberDan": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+
+  },
+  "acls": [],
+  "methods": []
+}

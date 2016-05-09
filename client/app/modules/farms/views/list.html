@@ -1,0 +1,75 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+   Quản lý chuồng trại
+    <span class="pull-right btn-group">
+      <a href="" class="btn btn-xs btn-success" ui-sref="^.add()">
+        <i class="fa fa-plus"></i>
+      </a>
+    </span>
+    <span class="pull-right btn-group" style="margin-right: 10px">
+      <a href="" class="btn btn-xs btn-success" ui-sref="^.newList">
+        Xem dạng danh sách    <i class="fa ion-ios-list">    </i>
+      </a>
+    </span>
+  </div>
+
+  <div class='list-group'>
+    <table ng-show="ctrl.farms.length" class="table table-bordered text-center" style="background-color: #ffffff">
+      <thead>
+      <tr>
+        <th>Mã chuồng nuôi</th>
+        <th>Mã nhân viên</th>
+        <th>Ngày tạo chuồng</th>
+        <th>Ngày đóng chuồng</th>
+        <th>Số lượng cá thể </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="table-item" ng-repeat="item in ctrl.farms | orderBy:'id':true ">
+        <td>
+          <span class="distance-to-icon">{{item.idFarm}}</span>
+        </td>
+        <td class="firstCell">
+          <div class="text-center">
+            <span class="distance-to-icon">{{item.idStaff}}</span>
+          </div>
+        </td>
+        <td>
+          <div class="text-center" style="margin: 5px 0">
+            <span class="distance-to-icon">{{item.startDate}}</span>
+          </div>
+        </td>
+        <td>
+          <div class="text-center">
+            <span class="distance-to-icon">{{item.endDate}}</span>
+          </div>
+        </td>
+        <td>
+          <div class="text-center">
+            <span class="distance-to-icon">{{item.numberPig}}</span>
+          </div>
+        </td>
+        <td>
+       <span class="pull-right btn-group">
+      <a href="" class="btn btn-xs btn-default" ui-sref="^.edit({id: item.id})">
+        <i class="fa fa-pencil"></i>
+      </a>
+      <a href="" class="btn btn-xs btn-danger" ui-sref="^.delete({id: item.id})">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </span>
+        </td>
+      </tr>
+      </tbody>
+
+    </table>
+    <div ng-show="!ctrl.farms.length" class="list-group-item">
+      <h4 class="list-group-item-heading" translate>
+        Chưa có dữ liệu chuồng trại nào.
+      </h4>
+
+      <p class="list-group-item-text" translate>Click <a href="" ui-sref="^.add">vào đây </a>để thêm dữ liệu!</p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "Food",
+  "plural": "foods",
+  "base": "PersistedModel",
+  "properties": {
+    "idFarm": {
+      "type": "string",
+      "required": true
+    },
+    "typeFood": {
+      "type": "string"
+    },
+    "numberFood": {
+      "type": "string",
+      "required": true
+    },
+    "units": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

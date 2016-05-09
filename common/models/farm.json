@@ -1,0 +1,28 @@
+{
+  "name": "Farm",
+  "plural": "farms",
+  "base": "PersistedModel",
+  "properties": {
+    "idFarm": {
+      "type": "string",
+      "required": true
+    },
+    "idStaff": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "numberPig": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
